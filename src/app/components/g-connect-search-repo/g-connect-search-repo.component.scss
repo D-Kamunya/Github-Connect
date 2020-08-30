@@ -1,0 +1,38 @@
+.search-repo{
+  height: 100%;
+  .form-inline{
+    input{
+      width: 50%;
+      margin:auto;
+      margin-right:0px
+    }
+  }
+  .btn-rounded{
+    border-radius: 10em;
+  }
+  .card {
+    border-radius: .25rem;
+  }
+ .card-cascade.wider {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .card.card-cascade.wider .card-body.card-body-cascade {
+    z-index: 1;
+    margin-right: 4%;
+    margin-left: 4%;
+    background: #fff;
+    border-radius: 0 0 .25rem .25rem;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  .card.card-cascade.wider .view.view-cascade {
+    z-index: 2;
+  }
+  .card.card-cascade .view.view-cascade.gradient-card-header {
+    padding: 1.6rem 1rem;
+    color: #fff;
+    text-align: center;
+  }
+}
