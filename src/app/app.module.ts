@@ -8,6 +8,7 @@ import { GConnectHomeComponent } from './components/g-connect-home/g-connect-hom
 import { GConnectNavbarComponent } from './components/g-connect-navbar/g-connect-navbar.component';
 import { GConnectSearchUserComponent } from './components/g-connect-search-user/g-connect-search-user.component';
 import { GConnectSearchRepoComponent } from './components/g-connect-search-repo/g-connect-search-repo.component';
+import { GConnectUserComponent } from './components/g-connect-user/g-connect-user.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GConnectSearchRepoComponent } from './components/g-connect-search-repo/
     GConnectHomeComponent,
     GConnectNavbarComponent,
     GConnectSearchUserComponent,
-    GConnectSearchRepoComponent
+    GConnectSearchRepoComponent,
+    GConnectUserComponent
   ],
   imports: [
     BrowserModule,

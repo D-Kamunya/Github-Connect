@@ -1,0 +1,58 @@
+
+.testimonial-card {
+  .card-up{
+    height: 120px;
+    overflow: hidden;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+  }
+  .avatar {
+    width: 120px;
+    margin-top: -60px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    border-radius: 50%;
+  }
+  .avatar img {
+    width: 100%;
+  }
+  .bio{
+    width: 50%;
+    margin: auto;
+  }
+  .repo{
+  
+  }
+  .chip{
+    display: inline-block;
+    height: 50px;
+    width: 45%;
+    padding: 0 12px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    background-color: #eceff1;
+    border-radius: 27px;
+    transition: all .3s linear;
+    img {
+      float: left;
+      width: 50px;
+      height: 50px;
+      margin: 0 8px 0 -12px;
+      border-radius: 50%;
+      
+    }
+    .btn-floating{
+      float: right;
+}
+}
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+}
+
