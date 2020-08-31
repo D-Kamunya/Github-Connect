@@ -10,6 +10,7 @@ import { GConnectNavbarComponent } from './components/g-connect-navbar/g-connect
 import { GConnectSearchUserComponent } from './components/g-connect-search-user/g-connect-search-user.component';
 import { GConnectSearchRepoComponent } from './components/g-connect-search-repo/g-connect-search-repo.component';
 import { GConnectUserComponent } from './components/g-connect-user/g-connect-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GConnectUserComponent } from './components/g-connect-user/g-connect-use
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
