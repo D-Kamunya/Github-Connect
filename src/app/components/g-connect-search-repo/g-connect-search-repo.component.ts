@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./g-connect-search-repo.component.scss']
 })
 export class GConnectSearchRepoComponent implements OnInit {
+  reponame:any
 
   constructor() { }
 
