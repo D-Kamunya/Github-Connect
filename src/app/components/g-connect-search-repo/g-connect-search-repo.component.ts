@@ -14,6 +14,14 @@ export class GConnectSearchRepoComponent implements OnInit {
   constructor(private apiService:GithubApiService) { }
 
   ngOnInit(): void {
+    this.apiService.getRepos('Github-Connect')
+    .then((success)=>{
+      this.repos = this.apiService.repos['items'];
+    },
+    (error)=>{
+      console.log(error)
+    })
+    
   }
 
   searchRepo(){
