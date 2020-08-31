@@ -78,5 +78,35 @@ export class GithubApiService {
   
   }
 
+   //Fn to get github repos .... return promise
+   getRepos(reponame){
+    let url=`https://api.github.com/search/repositories?q=${reponame}&order=asc?${environment.github_token}`
+  
+    interface Responce {
+      id:number
+      name:string
+      owner:any
+      html_url:string
+      description:any
+      updated_at:Date
+      watchers:number;
+      language:string
+      forks:number;
+    }
+  
+    return new Promise((resolve, reject) => {
+      this.http.get<Responce>(url).toPromise().then((result) => {
+          this.repos = result;
+          resolve();
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+    
+  
+  }
+
 
 }
