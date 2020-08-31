@@ -12,12 +12,14 @@ export class GConnectHomeComponent implements OnInit {
   user:User
   userrepos:Repo
 
-  constructor(private apiService:GithubApiService) { }
+  constructor(private apiService:GithubApiService) { 
+    this.user=new User(0,"","","","","","","","",0,0,0,new Date())
+    // this.userrepos=new Repo(0,"","","","","","","","",0,0,0,new Date())
+  }
 
   ngOnInit(): void {
     this.apiService.getUserProfile('d-kamunya').then((success)=>{
         this.user = this.apiService.user;
-        console.log(this.user);
       },
       (error)=>{
         console.log(error)
@@ -25,7 +27,6 @@ export class GConnectHomeComponent implements OnInit {
 
       this.apiService.getUserRepos('d-kamunya').then((success)=>{
         this.userrepos = this.apiService.repos;
-        console.log(this.userrepos);
       },
       (error)=>{
         console.log(error)

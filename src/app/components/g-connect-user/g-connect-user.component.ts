@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import {User} from '../../classes/user-class/user'
+import {Repo} from '../../classes/repo-class/repo'
 
 @Component({
   selector: 'app-g-connect-user',
@@ -11,5 +13,8 @@ export class GConnectUserComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input () user:User
+  @Input () repos:Repo
 
 }
