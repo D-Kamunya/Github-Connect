@@ -18,6 +18,19 @@ export class GConnectSearchUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.apiService.getUserProfile('d-kamunya').then((success)=>{
+    //   this.user = this.apiService.user;
+    // },
+    // (error)=>{
+    //   console.log(error)
+    // })
+
+    // this.apiService.getUserRepos('d-kamunya').then((success)=>{
+    //   this.userrepos = this.apiService.userrepos;
+    // },
+    // (error)=>{
+    //   console.log(error)
+    // })
   }
 
   searchUser(){

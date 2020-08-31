@@ -1,6 +1,8 @@
 .view{
   background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
   .main{
     padding-top:5rem
   }
