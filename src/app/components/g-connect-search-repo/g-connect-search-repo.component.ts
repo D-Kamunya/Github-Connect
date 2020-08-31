@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GithubApiService} from '../../services/github-api/github-api.service'
+import {Repo} from '../../classes/repo-class/repo'
 
 @Component({
   selector: 'app-g-connect-search-repo',
@@ -7,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GConnectSearchRepoComponent implements OnInit {
   reponame:any
+  repos:Repo
 
-  constructor() { }
+  constructor(private apiService:GithubApiService) { }
 
   ngOnInit(): void {
+  }
+
+  searchRepo(){
+    this.apiService.getRepos(this.reponame)
+    .then((success)=>{
+      this.repos = this.apiService.repos['items'];
+    },
+    (error)=>{
+      console.log(error)
+    })
+    
   }
 
 }
