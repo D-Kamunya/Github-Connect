@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GConnectSearchUserComponent implements OnInit {
 
+  username:any
   constructor() { }
 
   ngOnInit(): void {
