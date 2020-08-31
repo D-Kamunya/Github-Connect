@@ -21,7 +21,7 @@
         <p><mdb-icon class="mr-1" far icon="building"></mdb-icon>{{user.company}}</p>
         <p><mdb-icon class="mr-1" fas icon="link"></mdb-icon> <a href="{{user.blog}}">{{user.blog}}</a></p>
         <p><mdb-icon class="mr-1" fas icon="map-marker-alt"></mdb-icon>{{user.location}}</p>
-        <p class="text-muted">Since {{user.created_at}}</p>
+        <p class="text-muted">Since {{user.created_at | timeAgo}}</p>
       </div>
         <hr>
       <div class="profile-details mt-4">
@@ -65,7 +65,7 @@
                       </a>
                    
                     </div>
-                    <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at}}</p>
+                    <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
                   </div>
             
                   <mdb-card-body cascade="true" class="text-center">

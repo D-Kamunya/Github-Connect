@@ -11,6 +11,7 @@ import { GConnectSearchUserComponent } from './components/g-connect-search-user/
 import { GConnectSearchRepoComponent } from './components/g-connect-search-repo/g-connect-search-repo.component';
 import { GConnectUserComponent } from './components/g-connect-user/g-connect-user.component';
 import { FormsModule } from '@angular/forms';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     GConnectNavbarComponent,
     GConnectSearchUserComponent,
     GConnectSearchRepoComponent,
-    GConnectUserComponent
+    GConnectUserComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
