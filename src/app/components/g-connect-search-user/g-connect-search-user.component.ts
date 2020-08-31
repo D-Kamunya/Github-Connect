@@ -20,7 +20,7 @@ export class GConnectSearchUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitUser(){
+  searchUser(){
     this.apiService.getUserProfile(this.username).then((success)=>{
       this.user = this.apiService.user;
     },
@@ -29,7 +29,7 @@ export class GConnectSearchUserComponent implements OnInit {
     })
 
     this.apiService.getUserRepos(this.username).then((success)=>{
-      this.userrepos = this.apiService.repos;
+      this.userrepos = this.apiService.userrepos;
     },
     (error)=>{
       console.log(error)

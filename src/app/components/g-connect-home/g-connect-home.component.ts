@@ -26,7 +26,7 @@ export class GConnectHomeComponent implements OnInit {
       })
 
       this.apiService.getUserRepos('d-kamunya').then((success)=>{
-        this.userrepos = this.apiService.repos;
+        this.userrepos = this.apiService.userrepos;
       },
       (error)=>{
         console.log(error)

@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class GithubApiService {
   user:User
+  userrepos:Repo
   repos:Repo
 
   constructor(private http:HttpClient) { }
@@ -65,7 +66,7 @@ export class GithubApiService {
   
     return new Promise((resolve, reject) => {
       this.http.get<Responce>(url).toPromise().then((result) => {
-          this.repos = result;
+          this.userrepos = result;
           resolve();
         },
         (error) => {
