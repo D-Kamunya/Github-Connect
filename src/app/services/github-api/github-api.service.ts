@@ -15,11 +15,9 @@ export class GithubApiService {
 
   constructor(private http:HttpClient) { }
 
-  //Fn to get github userprofile data
+  //Fn to get github userprofile data .... return promise
   getUserProfile(username){
     let url=`https://api.github.com/users/${username}?access_token=${environment.github_token}`
-
-
     interface Responce {
       id:number
       name:string
@@ -35,7 +33,6 @@ export class GithubApiService {
       following:number;
       created_at:Date;
     }
-
     return new Promise((resolve, reject) => {
       this.http.get<Responce>(url).toPromise().then((result) => {
           this.user = result;
@@ -46,8 +43,38 @@ export class GithubApiService {
         }
       );
     });
+  }
+
+
+ //Fn to get github user repos .... return promise
+  getUserRepos(username){
+    let url=`https://api.github.com/users/${username}/repos?access_token=${environment.github_token}`
+  
+  
+    interface Responce {
+      id:number
+      name:string
+      owner:any
+      html_url:string
+      description:any
+      updated_at:Date
+      watchers:number;
+      language:string
+      forks:number;
+    }
+  
+    return new Promise((resolve, reject) => {
+      this.http.get<Responce>(url).toPromise().then((result) => {
+          this.repos = result;
+          resolve();
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
     
- 
+  
   }
 
 
