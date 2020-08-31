@@ -46,9 +46,9 @@
           <div class="tab-pane fade in show active mt-3"  id="repos" role="tabpanel">
             <div *ngFor="let repo of repos,let i=index">
               <div class="container mt-2">
-                <mdb-card cascade="true" narrower="true">
+                <mdb-card cascade="true" narrower="true" >
   
-                  <div class="view view-cascade  gradient-card-header blue-gradient">
+                  <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
                     <h2 class="card-header-title">{{repo.name}}</h2>
                     <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
                     <div class="text-center">

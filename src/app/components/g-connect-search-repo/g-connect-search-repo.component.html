@@ -8,7 +8,7 @@
         <!--Card-->
         <mdb-card cascade="true" wider="true">
   
-          <div class="view view-cascade  gradient-card-header blue-gradient">
+          <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
             <h2 class="card-header-title">{{repo.name}}</h2>
             <p><mdb-badge color="cyan">{{repo.owner.login}}</mdb-badge></p>
             <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
