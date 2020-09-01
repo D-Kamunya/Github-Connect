@@ -4,6 +4,7 @@ import {User} from '../../classes/user-class/user'
 import {Repo} from '../../classes/repo-class/repo'
 import {environment} from '../../../environments/environment'
 import {Follower} from '../../classes/follower-class/follower'
+import {Following} from '../../classes/following-class/following'
 import { from } from 'rxjs';
 
 @Injectable({
@@ -14,6 +15,8 @@ export class GithubApiService {
   userrepos:Repo
   repos:Repo
   userfollowers:Follower
+  userfollowing:Following
+
 
   constructor(private http:HttpClient) { }
 
@@ -132,6 +135,31 @@ export class GithubApiService {
     
   
   }
+
+   //Fn to get github user following users .... return promise
+   getUserFollowing(username){
+    let url=`https://api.github.com/users/${username}/following?access_token=${environment.github_token}`
+  
+  
+    interface Responce {
+      id:number
+      login:string
+      avartar_url:string
+      html_url:string
+    }  return new Promise((resolve, reject) => {
+      this.http.get<Responce>(url).toPromise().then((result) => {
+          this.userfollowing = result;
+          resolve();
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+    
+  
+  }
+
 
 
 

@@ -3,6 +3,7 @@ import {GithubApiService} from '../../services/github-api/github-api.service'
 import {User} from '../../classes/user-class/user'
 import {Repo} from '../../classes/repo-class/repo'
 import { Follower } from '../../classes/follower-class/follower';
+import { Following } from '../../classes/following-class/following';
 
 @Component({
   selector: 'app-g-connect-search-user',
@@ -15,6 +16,8 @@ export class GConnectSearchUserComponent implements OnInit {
   user:User
   userrepos:Repo
   userfollowers:Follower
+  userfollowing:Following
+
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
   }
@@ -59,6 +62,17 @@ export class GConnectSearchUserComponent implements OnInit {
     (error)=>{
       console.log(error)
     })
+
+
+    this.apiService.getUserFollowing(this.username)
+      .then((success)=>{
+        this.userfollowing = this.apiService.userfollowing;
+        console.log(this.userfollowing);
+        
+      },
+      (error)=>{
+        console.log(error)
+      })
   }
   
 

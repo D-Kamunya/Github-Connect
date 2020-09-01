@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {User} from '../../classes/user-class/user'
 import {Repo} from '../../classes/repo-class/repo'
 import { Follower } from 'src/app/classes/follower-class/follower';
+import { Following } from '../../classes/following-class/following';
 
 @Component({
   selector: 'app-g-connect-user',
@@ -18,4 +19,5 @@ export class GConnectUserComponent implements OnInit {
   @Input () user:User
   @Input () repos:Repo
   @Input () followers:Follower
+  @Input () followings:Following
 }

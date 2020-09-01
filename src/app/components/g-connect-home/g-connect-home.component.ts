@@ -3,6 +3,7 @@ import {GithubApiService} from '../../services/github-api/github-api.service'
 import {User} from '../../classes/user-class/user'
 import {Repo} from '../../classes/repo-class/repo'
 import {Follower} from '../../classes/follower-class/follower'
+import { Following } from '../../classes/following-class/following';
 
 @Component({
   selector: 'app-g-connect-home',
@@ -13,6 +14,7 @@ export class GConnectHomeComponent implements OnInit {
   user:User
   userrepos:Repo
   userfollowers:Follower
+  userfollowing:Following
 
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
@@ -38,6 +40,16 @@ export class GConnectHomeComponent implements OnInit {
       .then((success)=>{
         this.userfollowers = this.apiService.userfollowers;
         console.log(this.userfollowers);
+        
+      },
+      (error)=>{
+        console.log(error)
+      })
+
+      this.apiService.getUserFollowing('d-kamunya')
+      .then((success)=>{
+        this.userfollowing = this.apiService.userfollowing;
+        console.log(this.userfollowing);
         
       },
       (error)=>{
