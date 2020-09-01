@@ -3,5 +3,5 @@
       <input name="searchuser" #searchuser="ngModel" [(ngModel)]='username' class="form-control form-control-sm" type="text" placeholder="Search GitHub User" aria-label="Search">
       <button class="btn aqua-gradient btn-rounded btn-sm mr-auto waves-effect waves-light" type="submit"> <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon></button>
     </form>
-  <app-g-connect-user *ngIf='userrepos' [user]='user' [repos]='userrepos'></app-g-connect-user>
+  <app-g-connect-user *ngIf='userrepos' [user]='user' [repos]='userrepos' [followers]='userfollowers'></app-g-connect-user>
 </div>

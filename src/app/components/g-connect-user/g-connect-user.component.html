@@ -82,31 +82,18 @@
            
           </div>
           <!-- FOLLOWERS TAB -->
-          <div class="tab-pane fade text-center row mt-3" id="followers" role="tabpanel">
-            <div class="chip teal lighten-2 white-text col-6 ">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person">
-              <p class="mt-2">Jane Doe
-              <a class="btn-floating btn-small mr-3 btn-fb waves-effect waves-light">
-                <mdb-icon fab icon="github"></mdb-icon>
-              </a>
-            </p> 
+          <div class="tab-pane fade text-center row mt-3"   id="followers" role="tabpanel">
+            <div *ngFor='let follower of followers'>
+              <div class="chip teal lighten-2 white-text col-6 ">
+                <img src="{{follower.avatar_url}}" alt="Contact Person">
+                <p class="mt-2">{{follower.login}}
+                <a href="{{follower.html_url}}" class="btn-floating btn-small mr-3 btn-fb waves-effect waves-light">
+                  <mdb-icon fab icon="github"></mdb-icon>
+                </a>
+              </p> 
+              </div>
             </div>
-            <div class="chip teal lighten-2 white-text col-6 mt-3">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person">
-              <p class="mt-1">Jane Doe</p> 
-            </div>
-            <div class="chip teal lighten-2 white-text col-6 mt-3">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person">
-              <p class="mt-1">Jane Doe</p> 
-            </div>
-            <div class="chip teal lighten-2 white-text col-6 mt-3">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person">
-              <p class="mt-1">Jane Doe</p> 
-            </div>
-            <div class="chip teal lighten-2 white-text col-6 mt-3">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person">
-              <p class="mt-1">Jane Doe</p> 
-            </div>
+        
           </div>
           <!-- FOLLOWERING TAB -->
           <div class="tab-pane fade row mt-3" id="following" role="tabpanel">

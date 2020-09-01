@@ -3,8 +3,8 @@ import {HttpClient} from '@angular/common/http'
 import {User} from '../../classes/user-class/user'
 import {Repo} from '../../classes/repo-class/repo'
 import {environment} from '../../../environments/environment'
+import {Follower} from '../../classes/follower-class/follower'
 import { from } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ export class GithubApiService {
   user:User
   userrepos:Repo
   repos:Repo
+  userfollowers:Follower
 
   constructor(private http:HttpClient) { }
 
@@ -107,6 +108,31 @@ export class GithubApiService {
     
   
   }
+
+   //Fn to get github user followers .... return promise
+   getUserFollowers(username){
+    let url=`https://api.github.com/users/${username}/followers?access_token=${environment.github_token}`
+  
+  
+    interface Responce {
+      id:number
+      login:string
+      avartar_url:string
+      html_url:string
+    }  return new Promise((resolve, reject) => {
+      this.http.get<Responce>(url).toPromise().then((result) => {
+          this.userfollowers = result;
+          resolve();
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+    
+  
+  }
+
 
 
 }
