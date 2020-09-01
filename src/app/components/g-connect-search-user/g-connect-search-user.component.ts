@@ -17,6 +17,8 @@ export class GConnectSearchUserComponent implements OnInit {
   userrepos:Repo
   userfollowers:Follower
   userfollowing:Following
+  errors:boolean=false
+  searchName='Username'
 
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
@@ -44,6 +46,7 @@ export class GConnectSearchUserComponent implements OnInit {
     },
     (error)=>{
       console.log(error)
+      this.errors=true
     })
 
     this.apiService.getUserRepos(this.username).then((success)=>{

@@ -10,6 +10,8 @@ import {Repo} from '../../classes/repo-class/repo'
 export class GConnectSearchRepoComponent implements OnInit {
   reponame:any
   repos:Repo
+  errors:boolean=false
+  searchName='Repository Name'
 
   constructor(private apiService:GithubApiService) { }
 
@@ -31,6 +33,7 @@ export class GConnectSearchRepoComponent implements OnInit {
     },
     (error)=>{
       console.log(error)
+      this.errors=true
     })
     
   }

@@ -4,4 +4,5 @@
       <button class="btn aqua-gradient btn-rounded btn-sm mr-auto waves-effect waves-light" type="submit"> <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon></button>
     </form>
   <app-g-connect-user *ngIf='userrepos' [user]='user' [repos]='userrepos' [followers]='userfollowers' [followings]='userfollowing'></app-g-connect-user>
+  <app-error *ngIf='errors' [name]='searchName'></app-error>
 </div>

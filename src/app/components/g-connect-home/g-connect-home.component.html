@@ -1,3 +1,4 @@
 <div>
   <app-g-connect-user *ngIf='userrepos' [user]='user' [repos]='userrepos' [followers]='userfollowers' [followings]='userfollowing'></app-g-connect-user>
+  <app-error *ngIf='errors' [name]='searchName'></app-error>
 </div>

@@ -16,12 +16,13 @@ export class GConnectHomeComponent implements OnInit {
   userfollowers:Follower
   userfollowing:Following
   userName:string
-  
+  errors:boolean=false
+  searchName='Username '
 
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
     // this.userrepos=new Repo(0,"","","","","","","","",0,0,0,new Date())
-    this.userName='d-kamunya'
+    this.userName='d-kamunay'
   }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class GConnectHomeComponent implements OnInit {
       },
       (error)=>{
         console.log(error)
+        this.errors=true
       })
 
       this.apiService.getUserRepos(this.userName).then((success)=>{
