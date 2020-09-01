@@ -1,5 +1,5 @@
 <div class="search-repo container">
-  <form (ngSubmit)='searchRepo()' name="searchRepoForm" #searchRepoForm="ngForm" class="form-inline md-form mb-5 mt-5 form-sm">
+  <form (ngSubmit)='searchRepo();searchRepoForm.reset()' name="searchRepoForm" #searchRepoForm="ngForm" class="form-inline md-form mb-5 mt-5 form-sm">
     <input name="searchrepo" #searchrepo="ngModel" [(ngModel)]='reponame' class="form-control form-control-sm" type="text" placeholder="Search GitHub Repository" aria-label="Search">
     <button class="btn aqua-gradient btn-rounded btn-sm mr-auto waves-effect waves-light" type="submit"> <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon></button>
   </form>

@@ -35,6 +35,8 @@ export class GConnectSearchRepoComponent implements OnInit {
       console.log(error)
       this.errors=true
     })
+
+    this.reponame=""
     
   }
 

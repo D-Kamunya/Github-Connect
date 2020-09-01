@@ -1,5 +1,5 @@
 <div class="search-user">
-    <form (ngSubmit)='searchUser()' name="searchUserForm" #searchUserForm="ngForm" class="form-inline md-form mb-5 mt-5 form-sm">
+    <form (ngSubmit)='searchUser();searchUserForm.reset()' name="searchUserForm" #searchUserForm="ngForm" class="form-inline md-form mb-5 mt-5 form-sm">
       <input name="searchuser" #searchuser="ngModel" [(ngModel)]='username' class="form-control form-control-sm" type="text" placeholder="Search GitHub User" aria-label="Search">
       <button class="btn aqua-gradient btn-rounded btn-sm mr-auto waves-effect waves-light" type="submit"> <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon></button>
     </form>

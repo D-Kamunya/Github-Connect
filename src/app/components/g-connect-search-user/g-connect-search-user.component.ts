@@ -76,6 +76,7 @@ export class GConnectSearchUserComponent implements OnInit {
       (error)=>{
         console.log(error)
       })
+      this.username=""
   }
   
 
