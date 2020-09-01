@@ -74655,6 +74655,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_g_connect_home_g_connect_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/g-connect-home/g-connect-home.component */ "./src/app/components/g-connect-home/g-connect-home.component.ts");
 /* harmony import */ var _components_g_connect_search_user_g_connect_search_user_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/g-connect-search-user/g-connect-search-user.component */ "./src/app/components/g-connect-search-user/g-connect-search-user.component.ts");
 /* harmony import */ var _components_g_connect_search_repo_g_connect_search_repo_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/g-connect-search-repo/g-connect-search-repo.component */ "./src/app/components/g-connect-search-repo/g-connect-search-repo.component.ts");
+/* harmony import */ var _components_g_connect_userrepos_g_connect_userrepos_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/g-connect-userrepos/g-connect-userrepos.component */ "./src/app/components/g-connect-userrepos/g-connect-userrepos.component.ts");
+
 
 
 
@@ -74665,6 +74667,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', component: _components_g_connect_home_g_connect_home_component__WEBPACK_IMPORTED_MODULE_2__["GConnectHomeComponent"] },
     { path: 'search-user', component: _components_g_connect_search_user_g_connect_search_user_component__WEBPACK_IMPORTED_MODULE_3__["GConnectSearchUserComponent"] },
+    { path: 'userrepos/:username', component: _components_g_connect_userrepos_g_connect_userrepos_component__WEBPACK_IMPORTED_MODULE_5__["GConnectUserreposComponent"] },
     { path: 'search-repo', component: _components_g_connect_search_repo_g_connect_search_repo_component__WEBPACK_IMPORTED_MODULE_4__["GConnectSearchRepoComponent"] },
 ];
 let AppRoutingModule = /*@__PURE__*/ (() => {
@@ -74749,6 +74752,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
 /* harmony import */ var _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./directives/focus-repo.directive */ "./src/app/directives/focus-repo.directive.ts");
 /* harmony import */ var _components_error_error_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/error/error.component */ "./src/app/components/error/error.component.ts");
+/* harmony import */ var _components_g_connect_userrepos_g_connect_userrepos_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/g-connect-userrepos/g-connect-userrepos.component */ "./src/app/components/g-connect-userrepos/g-connect-userrepos.component.ts");
+
 
 
 
@@ -74793,7 +74798,8 @@ let AppModule = /*@__PURE__*/ (() => {
             _components_g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_12__["GConnectUserComponent"],
             _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_14__["TimeAgoPipe"],
             _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_15__["FocusRepoDirective"],
-            _components_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+            _components_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"],
+            _components_g_connect_userrepos_g_connect_userrepos_component__WEBPACK_IMPORTED_MODULE_17__["GConnectUserreposComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MDBRootModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _ngx_progressbar_core__WEBPACK_IMPORTED_MODULE_4__["NgProgressModule"], _ngx_progressbar_http_client__WEBPACK_IMPORTED_MODULE_5__["NgProgressHttpClientModule"]] });
 })();
@@ -75373,10 +75379,12 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GConnectUserComponent", function() { return GConnectUserComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../directives/focus-repo.directive */ "./src/app/directives/focus-repo.directive.ts");
-/* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../directives/focus-repo.directive */ "./src/app/directives/focus-repo.directive.ts");
+/* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
+
 
 
 
@@ -75385,85 +75393,95 @@ __webpack_require__.r(__webpack_exports__);
 
 function GConnectUserComponent_div_54_mdb_card_body_24_Template(rf, ctx) {
     if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-card-body", 45);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-card-body", 46);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-card-text");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-        const repo_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+        const repo_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r3.description);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r4.description);
     }
 }
 function GConnectUserComponent_div_54_Template(rf, ctx) {
     if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 32);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mdb-card", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 34);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h2", 35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mdb-card", 34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h2", 36);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mdb-badge", 36);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mdb-badge", 37);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mdb-badge", 37);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "mdb-icon", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mdb-badge", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "mdb-icon", 39);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mdb-badge", 37);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "mdb-icon", 39);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mdb-badge", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "mdb-icon", 40);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mdb-badge", 37);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "mdb-icon", 40);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "mdb-icon", 41);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mdb-badge", 38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "mdb-icon", 41);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "mdb-icon", 42);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "p", 42);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "i", 43);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "p", 43);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "i", 44);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](23, "timeAgo");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, GConnectUserComponent_div_54_mdb_card_body_24_Template, 3, 1, "mdb-card-body", 44);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, GConnectUserComponent_div_54_mdb_card_body_24_Template, 3, 1, "mdb-card-body", 45);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-        const repo_r3 = ctx.$implicit;
+        const repo_r4 = ctx.$implicit;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r3.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r4.name);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r3.language);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r4.language);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r3.watchers, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r4.watchers, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r3.forks, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r4.forks, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", repo_r3.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", repo_r4.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](23, 7, repo_r3.updated_at));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](23, 7, repo_r4.updated_at));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", repo_r3.description);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", repo_r4.description);
     }
 }
-function GConnectUserComponent_div_57_Template(rf, ctx) {
+function GConnectUserComponent_button_56_Template(rf, ctx) {
     if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 46);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 47);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 48);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 49);
+        const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 47);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function GConnectUserComponent_button_56_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r8.goToUrl(ctx_r8.user.login); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " SHOW ALL REPOS");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "mdb-icon", 48);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    }
+}
+function GConnectUserComponent_div_59_Template(rf, ctx) {
+    if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 49);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 50);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 51);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 52);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 50);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 53);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mdb-icon", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75471,23 +75489,23 @@ function GConnectUserComponent_div_57_Template(rf, ctx) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-        const follower_r7 = ctx.$implicit;
+        const follower_r10 = ctx.$implicit;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", follower_r7.avatar_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", follower_r10.avatar_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", follower_r7.login, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", follower_r10.login, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", follower_r7.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", follower_r10.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
     }
 }
-function GConnectUserComponent_div_60_Template(rf, ctx) {
+function GConnectUserComponent_div_62_Template(rf, ctx) {
     if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 46);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 47);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 48);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 49);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 49);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 50);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 51);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 52);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 50);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 53);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mdb-icon", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75495,23 +75513,32 @@ function GConnectUserComponent_div_60_Template(rf, ctx) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-        const following_r8 = ctx.$implicit;
+        const following_r11 = ctx.$implicit;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", following_r8.avatar_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", following_r11.avatar_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", following_r8.login, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", following_r11.login, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", following_r8.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", following_r11.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
     }
 }
 let GConnectUserComponent = /*@__PURE__*/ (() => {
     class GConnectUserComponent {
-        constructor() { }
+        constructor(router) {
+            this.router = router;
+            this.showBtn = false;
+        }
         ngOnInit() {
+            if (Object.keys(this.repos).length > 3) {
+                this.showBtn = true;
+            }
+        }
+        goToUrl(username) {
+            this.router.navigate(['/userrepos', username]);
         }
     }
-    GConnectUserComponent.ɵfac = function GConnectUserComponent_Factory(t) { return new (t || GConnectUserComponent)(); };
-    GConnectUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectUserComponent, selectors: [["app-g-connect-user"]], inputs: { user: "user", repos: "repos", followers: "followers", followings: "followings" }, decls: 61, vars: 18, consts: [[1, "container"], [1, "testimonial-card"], [1, "card-up", "aqua-gradient"], [1, "avatar", "mx-auto"], [1, "rounded-circle", 3, "src"], [1, "text-center"], [1, "mr-1"], [3, "href"], ["fab", "", "icon", "github"], [1, "bio"], [1, "text-muted"], ["far", "", "icon", "building", 1, "mr-1"], ["fas", "", "icon", "link", 1, "mr-1"], ["fas", "", "icon", "map-marker-alt", 1, "mr-1"], [1, "profile-details", "mt-4"], ["role", "tablist", 1, "nav", "nav-tabs", "md-tabs", "nav-justified"], [1, "nav-item"], ["data-toggle", "tab", "href", "#repos", "role", "tab", 1, "nav-link"], ["fas", "", "icon", "book", 1, "mr-1"], ["pill", "true", "default", "true", "color", "indigo", 1, "ml-1"], ["data-toggle", "tab", "href", "#followers", "role", "tab", 1, "nav-link"], ["fas", "", "icon", "user-friends", 1, "mr-1"], ["data-toggle", "tab", "href", "#following", "role", "tab", 1, "nav-link"], ["fas", "", "icon", "users", 1, "mr-1"], [1, "tab-content"], ["id", "repos", "role", "tabpanel", 1, "tab-pane", "fade", "in", "show", "active", "mt-3"], [1, "row"], ["class", "mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6", 4, "ngFor", "ngForOf"], ["id", "followers", "role", "tabpanel", 1, "tab-pane", "fade", "text-center", "row", "mt-3"], ["class", "mx-auto mb-3 repo col-lg-6 col-md-6 col-sm-6", 4, "ngFor", "ngForOf"], ["id", "following", "role", "tabpanel", 1, "tab-pane", "fade", "text-center", "row", "mt-3"], [1, "mx-auto", "mb-3", "repo", "col-lg-3", "col-md-4", "col-sm-6"], [1, "container", "mt-2"], ["cascade", "true", "wider", "true", "reverse", "true", 1, "my-4"], ["mdbWavesEffect", "", 1, "view", "view-cascade", "gradient-card-header", "blue-gradient", "overlay", "waves-light", 3, "appFocusRepo"], [1, "card-header-title"], ["color", "cyan"], ["pill", "true", "color", "purple"], ["fas", "", "icon", "eye", 1, "mr-1"], ["fas", "", "icon", "code-branch", 1, "mr-1"], ["fab", "", "icon", "github", 1, "mr-1"], ["fas", "", "icon", "angle-double-right"], [1, "mb-0", "mt-2"], [1, "far", "fa-calendar", "mr-2"], ["cascade", "true", "class", "text-center", 4, "ngIf"], ["cascade", "true", 1, "text-center"], [1, "mx-auto", "mb-3", "repo", "col-lg-6", "col-md-6", "col-sm-6"], [1, "chip", "teal", "lighten-2", "white-text", "col-6"], ["alt", "Contact Person", 3, "src"], [1, "mt-2"], [1, "btn-floating", "btn-small", "mr-3", "btn-fb", "waves-effect", "waves-light", 3, "href"]], template: function GConnectUserComponent_Template(rf, ctx) {
+    GConnectUserComponent.ɵfac = function GConnectUserComponent_Factory(t) { return new (t || GConnectUserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
+    GConnectUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectUserComponent, selectors: [["app-g-connect-user"]], inputs: { user: "user", repos: "repos", followers: "followers", followings: "followings" }, decls: 63, vars: 23, consts: [[1, "container"], [1, "testimonial-card"], [1, "card-up", "aqua-gradient"], [1, "avatar", "mx-auto"], [1, "rounded-circle", 3, "src"], [1, "text-center"], [1, "mr-1"], [3, "href"], ["fab", "", "icon", "github"], [1, "bio"], [1, "text-muted"], ["far", "", "icon", "building", 1, "mr-1"], ["fas", "", "icon", "link", 1, "mr-1"], ["fas", "", "icon", "map-marker-alt", 1, "mr-1"], [1, "profile-details", "mt-4"], ["role", "tablist", 1, "nav", "nav-tabs", "md-tabs", "nav-justified"], [1, "nav-item"], ["data-toggle", "tab", "href", "#repos", "role", "tab", 1, "nav-link"], ["fas", "", "icon", "book", 1, "mr-1"], ["pill", "true", "default", "true", "color", "indigo", 1, "ml-1"], ["data-toggle", "tab", "href", "#followers", "role", "tab", 1, "nav-link"], ["fas", "", "icon", "user-friends", 1, "mr-1"], ["data-toggle", "tab", "href", "#following", "role", "tab", 1, "nav-link"], ["fas", "", "icon", "users", 1, "mr-1"], [1, "tab-content"], ["id", "repos", "role", "tabpanel", 1, "tab-pane", "fade", "in", "show", "active", "mt-3"], [1, "row"], ["class", "mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6", 4, "ngFor", "ngForOf"], ["mdbBtn", "", "type", "button", "color", "default", "mdbWavesEffect", "", 3, "click", 4, "ngIf"], ["id", "followers", "role", "tabpanel", 1, "tab-pane", "fade", "text-center", "row", "mt-3"], ["class", "mx-auto mb-3 repo col-lg-6 col-md-6 col-sm-6", 4, "ngFor", "ngForOf"], ["id", "following", "role", "tabpanel", 1, "tab-pane", "fade", "text-center", "row", "mt-3"], [1, "mx-auto", "mb-3", "repo", "col-lg-3", "col-md-4", "col-sm-6"], [1, "container", "mt-2"], ["cascade", "true", "wider", "true", "reverse", "true", 1, "my-4"], ["mdbWavesEffect", "", 1, "view", "view-cascade", "gradient-card-header", "blue-gradient", "overlay", "waves-light", 3, "appFocusRepo"], [1, "card-header-title"], ["color", "cyan"], ["pill", "true", "color", "purple"], ["fas", "", "icon", "eye", 1, "mr-1"], ["fas", "", "icon", "code-branch", 1, "mr-1"], ["fab", "", "icon", "github", 1, "mr-1"], ["fas", "", "icon", "angle-double-right"], [1, "mb-0", "mt-2"], [1, "far", "fa-calendar", "mr-2"], ["cascade", "true", "class", "text-center", 4, "ngIf"], ["cascade", "true", 1, "text-center"], ["mdbBtn", "", "type", "button", "color", "default", "mdbWavesEffect", "", 3, "click"], ["fas", "", "icon", "eye", 1, "ml-1"], [1, "mx-auto", "mb-3", "repo", "col-lg-6", "col-md-6", "col-sm-6"], [1, "chip", "teal", "lighten-2", "white-text", "col-6"], ["alt", "Contact Person", 3, "src"], [1, "mt-2"], [1, "btn-floating", "btn-small", "mr-3", "btn-fb", "waves-effect", "waves-light", 3, "href"]], template: function GConnectUserComponent_Template(rf, ctx) {
             if (rf & 1) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-card", 1);
@@ -75591,16 +75618,18 @@ let GConnectUserComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 25);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 26);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](54, GConnectUserComponent_div_54_Template, 25, 9, "div", 27);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](55, "slice");
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](56, GConnectUserComponent_button_56_Template, 3, 0, "button", 28);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "div", 29);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 26);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](59, GConnectUserComponent_div_59_Template, 7, 3, "div", 30);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 28);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 26);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](57, GConnectUserComponent_div_57_Template, 7, 3, "div", 29);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 30);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "div", 26);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](60, GConnectUserComponent_div_60_Template, 7, 3, "div", 29);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 31);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 26);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](62, GConnectUserComponent_div_62_Template, 7, 3, "div", 30);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75629,7 +75658,7 @@ let GConnectUserComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.user.location);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Since ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](29, 16, ctx.user.created_at), "");
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Since ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](29, 17, ctx.user.created_at), "");
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.user.public_repos);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
@@ -75637,14 +75666,155 @@ let GConnectUserComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.user.following);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.repos);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](55, 19, ctx.repos, 0, 3));
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showBtn);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.followers);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.followings);
             }
-        }, directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["MdbCardComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["MdbCardBodyComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["MdbCardTitleComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["FabDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["FarDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["FasDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["MDBBadgeComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["WavesDirective"], _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_3__["FocusRepoDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_1__["MdbCardTextComponent"]], pipes: [_pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_4__["TimeAgoPipe"]], styles: [".testimonial-card[_ngcontent-%COMP%]   .card-up[_ngcontent-%COMP%] {\n  height: 120px;\n  overflow: hidden;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.testimonial-card[_ngcontent-%COMP%]   .avatar[_ngcontent-%COMP%] {\n  width: 120px;\n  margin-top: -60px;\n  overflow: hidden;\n  border: 5px solid #fff;\n  border-radius: 50%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .avatar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .bio[_ngcontent-%COMP%] {\n  width: 50%;\n  margin: auto;\n}\n.testimonial-card[_ngcontent-%COMP%]   .chip[_ngcontent-%COMP%] {\n  display: inline-block;\n  height: 50px;\n  width: 45%;\n  padding: 0 12px;\n  margin-right: 1rem;\n  margin-bottom: 1rem;\n  font-size: 20px;\n  font-weight: 500;\n  line-height: 32px;\n  color: rgba(0, 0, 0, 0.6);\n  cursor: pointer;\n  background-color: #eceff1;\n  border-radius: 27px;\n  transition: all 0.3s linear;\n}\n.testimonial-card[_ngcontent-%COMP%]   .chip[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  float: left;\n  width: 50px;\n  height: 50px;\n  margin: 0 8px 0 -12px;\n  border-radius: 50%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .chip[_ngcontent-%COMP%]   .btn-floating[_ngcontent-%COMP%] {\n  float: right;\n}\n.testimonial-card[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  border-style: none;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%] {\n  background-color: transparent;\n  box-shadow: none;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n  background-clip: border-box;\n  border-radius: 0.25rem;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  z-index: 2;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  border-radius: 0.25rem;\n  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .view[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: hidden;\n  cursor: default;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   view[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  position: relative;\n  display: block;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card-img-top[_ngcontent-%COMP%] {\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card-img-top[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n  width: 100%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  border-style: none;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #007bff;\n  text-decoration: none;\n  cursor: pointer;\n  background-color: transparent;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .overlay[_ngcontent-%COMP%]   .mask[_ngcontent-%COMP%] {\n  opacity: 0;\n  transition: all 0.4s ease-in-out;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .view[_ngcontent-%COMP%]   .mask[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  background-attachment: fixed;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .rgba-white-slight[_ngcontent-%COMP%], .testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .rgba-white-slight[_ngcontent-%COMP%]:after {\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider.reverse[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 3;\n  margin-top: -3px;\n  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 1;\n  margin-right: 4%;\n  margin-left: 4%;\n  background: #fff;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card-body[_ngcontent-%COMP%] {\n  padding-top: 1.5rem;\n  padding-bottom: 1.5rem;\n  border-radius: 0 !important;\n}"] });
+        }, directives: [angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MdbCardComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MdbCardBodyComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MdbCardTitleComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["FabDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["FarDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["FasDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MDBBadgeComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["WavesDirective"], _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_4__["FocusRepoDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MdbCardTextComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MdbBtnDirective"]], pipes: [_pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_5__["TimeAgoPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["SlicePipe"]], styles: [".testimonial-card[_ngcontent-%COMP%]   .card-up[_ngcontent-%COMP%] {\n  height: 120px;\n  overflow: hidden;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.testimonial-card[_ngcontent-%COMP%]   .avatar[_ngcontent-%COMP%] {\n  width: 120px;\n  margin-top: -60px;\n  overflow: hidden;\n  border: 5px solid #fff;\n  border-radius: 50%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .avatar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .bio[_ngcontent-%COMP%] {\n  width: 50%;\n  margin: auto;\n}\n.testimonial-card[_ngcontent-%COMP%]   .chip[_ngcontent-%COMP%] {\n  display: inline-block;\n  height: 50px;\n  width: 45%;\n  padding: 0 12px;\n  margin-right: 1rem;\n  margin-bottom: 1rem;\n  font-size: 20px;\n  font-weight: 500;\n  line-height: 32px;\n  color: rgba(0, 0, 0, 0.6);\n  cursor: pointer;\n  background-color: #eceff1;\n  border-radius: 27px;\n  transition: all 0.3s linear;\n}\n.testimonial-card[_ngcontent-%COMP%]   .chip[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  float: left;\n  width: 50px;\n  height: 50px;\n  margin: 0 8px 0 -12px;\n  border-radius: 50%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .chip[_ngcontent-%COMP%]   .btn-floating[_ngcontent-%COMP%] {\n  float: right;\n}\n.testimonial-card[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  border-style: none;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%] {\n  background-color: transparent;\n  box-shadow: none;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n  background-clip: border-box;\n  border-radius: 0.25rem;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  z-index: 2;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  border-radius: 0.25rem;\n  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .view[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: hidden;\n  cursor: default;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   view[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  position: relative;\n  display: block;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card-img-top[_ngcontent-%COMP%] {\n  border-top-left-radius: calc(0.25rem - 1px);\n  border-top-right-radius: calc(0.25rem - 1px);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card-img-top[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n  width: 100%;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  vertical-align: middle;\n  border-style: none;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #007bff;\n  text-decoration: none;\n  cursor: pointer;\n  background-color: transparent;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .overlay[_ngcontent-%COMP%]   .mask[_ngcontent-%COMP%] {\n  opacity: 0;\n  transition: all 0.4s ease-in-out;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .view[_ngcontent-%COMP%]   .mask[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  background-attachment: fixed;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .rgba-white-slight[_ngcontent-%COMP%], .testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .rgba-white-slight[_ngcontent-%COMP%]:after {\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider.reverse[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 3;\n  margin-top: -3px;\n  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 1;\n  margin-right: 4%;\n  margin-left: 4%;\n  background: #fff;\n}\n.testimonial-card[_ngcontent-%COMP%]   .repo[_ngcontent-%COMP%]   .card-body[_ngcontent-%COMP%] {\n  padding-top: 1.5rem;\n  padding-bottom: 1.5rem;\n  border-radius: 0 !important;\n}"] });
     return GConnectUserComponent;
+})();
+
+
+/***/ }),
+
+/***/ "./src/app/components/g-connect-userrepos/g-connect-userrepos.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/g-connect-userrepos/g-connect-userrepos.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: GConnectUserreposComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GConnectUserreposComponent", function() { return GConnectUserreposComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/github-api/github-api.service */ "./src/app/services/github-api/github-api.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
+/* harmony import */ var _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../directives/focus-repo.directive */ "./src/app/directives/focus-repo.directive.ts");
+/* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
+
+
+
+
+
+
+
+
+function GConnectUserreposComponent_div_2_mdb_card_body_26_Template(rf, ctx) {
+    if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mdb-card-body", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-card-text");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    }
+    if (rf & 2) {
+        const repo_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r1.description, " ");
+    }
+}
+function GConnectUserreposComponent_div_2_Template(rf, ctx) {
+    if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mdb-card", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h2", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mdb-badge", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "mdb-badge", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mdb-badge", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "mdb-icon", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mdb-badge", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "mdb-icon", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mdb-badge", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "mdb-icon", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "mdb-icon", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "p", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "i", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](25, "timeAgo");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, GConnectUserreposComponent_div_2_mdb_card_body_26_Template, 3, 1, "mdb-card-body", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    }
+    if (rf & 2) {
+        const repo_r1 = ctx.$implicit;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r1.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r1.owner.login);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r1.language);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r1.watchers, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r1.forks, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", repo_r1.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](25, 8, repo_r1.updated_at));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", repo_r1.description);
+    }
+}
+let GConnectUserreposComponent = /*@__PURE__*/ (() => {
+    class GConnectUserreposComponent {
+        constructor(route, apiService) {
+            this.route = route;
+            this.apiService = apiService;
+        }
+        ngOnInit() {
+            this.username = this.route.snapshot.paramMap.get('username');
+            this.apiService.getUserRepos(this.username).then((success) => {
+                this.userrepos = this.apiService.userrepos;
+                console.log(this.userrepos);
+            }, (error) => {
+                console.log(error);
+            });
+        }
+    }
+    GConnectUserreposComponent.ɵfac = function GConnectUserreposComponent_Factory(t) { return new (t || GConnectUserreposComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_2__["GithubApiService"])); };
+    GConnectUserreposComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectUserreposComponent, selectors: [["app-g-connect-userrepos"]], decls: 3, vars: 1, consts: [[1, "container"], [1, "row"], ["class", "mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6", 4, "ngFor", "ngForOf"], [1, "mx-auto", "mb-3", "repo", "col-lg-3", "col-md-4", "col-sm-6"], ["cascade", "true", "wider", "true"], [1, "view", "view-cascade", "gradient-card-header", "blue-gradient", 3, "appFocusRepo"], [1, "card-header-title"], ["color", "cyan"], [1, "text-center"], ["pill", "true", "color", "purple"], ["fas", "", "icon", "eye", 1, "mr-1"], ["fas", "", "icon", "code-branch", 1, "mr-1"], [3, "href"], ["fab", "", "icon", "github", 1, "mr-1"], ["fas", "", "icon", "angle-double-right"], [1, "mb-0", "mt-2"], [1, "far", "fa-calendar", "mr-2"], ["cascade", "true", "class", "text-center", 4, "ngIf"], ["cascade", "true", 1, "text-center"]], template: function GConnectUserreposComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, GConnectUserreposComponent_div_2_Template, 27, 10, "div", 2);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            }
+            if (rf & 2) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.userrepos);
+            }
+        }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MdbCardComponent"], _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_5__["FocusRepoDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MDBBadgeComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["FasDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["FabDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MdbCardBodyComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MdbCardTextComponent"]], pipes: [_pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_6__["TimeAgoPipe"]], styles: [".card[_ngcontent-%COMP%] {\n  border-radius: 0.25rem;\n}\n\n.card-cascade.wider[_ngcontent-%COMP%] {\n  background-color: transparent;\n  box-shadow: none;\n}\n\n.card.card-cascade.wider[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 1;\n  margin-right: 4%;\n  margin-left: 4%;\n  background: #fff;\n  border-radius: 0 0 0.25rem 0.25rem;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n}\n\n.card.card-cascade.wider[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  z-index: 2;\n}\n\n.card.card-cascade[_ngcontent-%COMP%]   .view.view-cascade.gradient-card-header[_ngcontent-%COMP%] {\n  padding: 1.6rem 1rem;\n  color: #fff;\n  text-align: center;\n}"] });
+    return GConnectUserreposComponent;
 })();
 
 
