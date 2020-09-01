@@ -30,7 +30,7 @@
             <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
           </div>
   
-          <mdb-card-body cascade="true" class="text-center">
+          <mdb-card-body *ngIf='repo.description' cascade="true" class="text-center">
   
             <mdb-card-text>{{repo.description}} </mdb-card-text>
   

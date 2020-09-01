@@ -47,9 +47,9 @@
             <div class="row">
               <div class="mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6" *ngFor="let repo of repos,let i=index">
                 <div class="container mt-2">
-                  <mdb-card cascade="true" narrower="true" >
-    
-                    <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
+                  <mdb-card cascade="true" wider="true" reverse="true" class="my-4">
+                    <!--Card image-->
+                    <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient overlay waves-light" mdbWavesEffect>
                       <h2 class="card-header-title">{{repo.name}}</h2>
                       <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
                       <div class="text-center">
@@ -68,15 +68,10 @@
                       </div>
                       <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
                     </div>
-              
-                    <mdb-card-body cascade="true" class="text-center">
-                      <!--Card content-->
-              
-                      <mdb-card-text>{{repo.description}}</mdb-card-text>
-              
+                    <!-- Card content -->
+                    <mdb-card-body *ngIf='repo.description' cascade="true" class="text-center">
+                      <mdb-card-text >{{repo.description}}</mdb-card-text>
                     </mdb-card-body>
-                    <!--/.Card content-->
-              
                   </mdb-card>
                 </div>
               </div>
