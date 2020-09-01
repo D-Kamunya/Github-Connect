@@ -74748,6 +74748,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
 /* harmony import */ var _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./directives/focus-repo.directive */ "./src/app/directives/focus-repo.directive.ts");
+/* harmony import */ var _components_error_error_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/error/error.component */ "./src/app/components/error/error.component.ts");
+
 
 
 
@@ -74790,7 +74792,8 @@ let AppModule = /*@__PURE__*/ (() => {
             _components_g_connect_search_repo_g_connect_search_repo_component__WEBPACK_IMPORTED_MODULE_11__["GConnectSearchRepoComponent"],
             _components_g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_12__["GConnectUserComponent"],
             _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_14__["TimeAgoPipe"],
-            _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_15__["FocusRepoDirective"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+            _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_15__["FocusRepoDirective"],
+            _components_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_2__["MDBRootModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _ngx_progressbar_core__WEBPACK_IMPORTED_MODULE_4__["NgProgressModule"], _ngx_progressbar_http_client__WEBPACK_IMPORTED_MODULE_5__["NgProgressHttpClientModule"]] });
 })();
@@ -74829,6 +74832,55 @@ class User {
 
 /***/ }),
 
+/***/ "./src/app/components/error/error.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/error/error.component.ts ***!
+  \*****************************************************/
+/*! exports provided: ErrorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErrorComponent", function() { return ErrorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+let ErrorComponent = /*@__PURE__*/ (() => {
+    class ErrorComponent {
+        constructor() { }
+        ngOnInit() {
+            console.log(this.name);
+        }
+    }
+    ErrorComponent.ɵfac = function ErrorComponent_Factory(t) { return new (t || ErrorComponent)(); };
+    ErrorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ErrorComponent, selectors: [["app-error"]], inputs: { name: "name" }, decls: 8, vars: 2, consts: [[1, "container", "text-center"], ["role", "alert", 1, "alert", "alert-dark", 2, "margin-top", "100px"], [1, "alert-heading"], [1, "far", "fa-surprise", "fa-lg"]], template: function ErrorComponent_Template(rf, ctx) {
+            if (rf & 1) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h4", 2);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "i", 3);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p");
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "hr");
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            }
+            if (rf & 2) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Oops, ", ctx.name, " not found");
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Looks like the ", ctx.name, " you requested does not exist.");
+            }
+        }, styles: [""] });
+    return ErrorComponent;
+})();
+
+
+/***/ }),
+
 /***/ "./src/app/components/g-connect-home/g-connect-home.component.ts":
 /*!***********************************************************************!*\
   !*** ./src/app/components/g-connect-home/g-connect-home.component.ts ***!
@@ -74844,6 +74896,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/github-api/github-api.service */ "./src/app/services/github-api/github-api.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /* harmony import */ var _g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../g-connect-user/g-connect-user.component */ "./src/app/components/g-connect-user/g-connect-user.component.ts");
+/* harmony import */ var _error_error_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../error/error.component */ "./src/app/components/error/error.component.ts");
+
 
 
 
@@ -74852,39 +74906,52 @@ __webpack_require__.r(__webpack_exports__);
 
 function GConnectHomeComponent_app_g_connect_user_1_Template(rf, ctx) {
     if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-g-connect-user", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-g-connect-user", 2);
     }
     if (rf & 2) {
         const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("user", ctx_r0.user)("repos", ctx_r0.userrepos)("followers", ctx_r0.userfollowers)("followings", ctx_r0.userfollowing);
     }
 }
+function GConnectHomeComponent_app_error_2_Template(rf, ctx) {
+    if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-error", 3);
+    }
+    if (rf & 2) {
+        const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("name", ctx_r1.searchName);
+    }
+}
 let GConnectHomeComponent = /*@__PURE__*/ (() => {
     class GConnectHomeComponent {
         constructor(apiService) {
             this.apiService = apiService;
+            this.errors = false;
+            this.searchName = 'Username ';
             this.user = new _classes_user_class_user__WEBPACK_IMPORTED_MODULE_1__["User"](0, "", "", "", "", "", "", "", "", 0, 0, 0, new Date());
             // this.userrepos=new Repo(0,"","","","","","","","",0,0,0,new Date())
+            this.userName = 'd-kamunya';
         }
         ngOnInit() {
-            this.apiService.getUserProfile('d-kamunya').then((success) => {
+            this.apiService.getUserProfile(this.userName).then((success) => {
                 this.user = this.apiService.user;
             }, (error) => {
                 console.log(error);
+                this.errors = true;
             });
-            this.apiService.getUserRepos('d-kamunya').then((success) => {
+            this.apiService.getUserRepos(this.userName).then((success) => {
                 this.userrepos = this.apiService.userrepos;
             }, (error) => {
                 console.log(error);
             });
-            this.apiService.getUserFollowers('d-kamunya')
+            this.apiService.getUserFollowers(this.userName)
                 .then((success) => {
                 this.userfollowers = this.apiService.userfollowers;
                 console.log(this.userfollowers);
             }, (error) => {
                 console.log(error);
             });
-            this.apiService.getUserFollowing('d-kamunya')
+            this.apiService.getUserFollowing(this.userName)
                 .then((success) => {
                 this.userfollowing = this.apiService.userfollowing;
                 console.log(this.userfollowing);
@@ -74894,17 +74961,20 @@ let GConnectHomeComponent = /*@__PURE__*/ (() => {
         }
     }
     GConnectHomeComponent.ɵfac = function GConnectHomeComponent_Factory(t) { return new (t || GConnectHomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_2__["GithubApiService"])); };
-    GConnectHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectHomeComponent, selectors: [["app-g-connect-home"]], decls: 2, vars: 1, consts: [[3, "user", "repos", "followers", "followings", 4, "ngIf"], [3, "user", "repos", "followers", "followings"]], template: function GConnectHomeComponent_Template(rf, ctx) {
+    GConnectHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectHomeComponent, selectors: [["app-g-connect-home"]], decls: 3, vars: 2, consts: [[3, "user", "repos", "followers", "followings", 4, "ngIf"], [3, "name", 4, "ngIf"], [3, "user", "repos", "followers", "followings"], [3, "name"]], template: function GConnectHomeComponent_Template(rf, ctx) {
             if (rf & 1) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, GConnectHomeComponent_app_g_connect_user_1_Template, 1, 4, "app-g-connect-user", 0);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, GConnectHomeComponent_app_error_2_Template, 1, 1, "app-error", 1);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
             }
             if (rf & 2) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.userrepos);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.errors);
             }
-        }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_4__["GConnectUserComponent"]], styles: [""] });
+        }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_4__["GConnectUserComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_5__["ErrorComponent"]], styles: [""] });
     return GConnectHomeComponent;
 })();
 
@@ -74996,7 +75066,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /* harmony import */ var _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../directives/focus-repo.directive */ "./src/app/directives/focus-repo.directive.ts");
-/* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
+/* harmony import */ var _error_error_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../error/error.component */ "./src/app/components/error/error.component.ts");
+/* harmony import */ var _pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../pipes/time-ago.pipe */ "./src/app/pipes/time-ago.pipe.ts");
+
 
 
 
@@ -75008,45 +75080,45 @@ __webpack_require__.r(__webpack_exports__);
 function GConnectSearchRepoComponent_div_7_Template(rf, ctx) {
     if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mdb-card", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h2", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mdb-card", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h2", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mdb-badge", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mdb-badge", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mdb-badge", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mdb-badge", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mdb-badge", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "mdb-icon", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mdb-badge", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "mdb-icon", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mdb-badge", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "mdb-icon", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mdb-badge", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "mdb-icon", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "a", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mdb-badge", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "mdb-icon", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "mdb-icon", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "a", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mdb-badge", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "mdb-icon", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "mdb-icon", 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "p", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "i", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "p", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "i", 22);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](26, "timeAgo");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "mdb-card-body", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "mdb-card-body", 23);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "mdb-card-text");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75056,29 +75128,40 @@ function GConnectSearchRepoComponent_div_7_Template(rf, ctx) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-        const repo_r3 = ctx.$implicit;
+        const repo_r4 = ctx.$implicit;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r3.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r4.name);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r3.owner.login);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r4.owner.login);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r3.language);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](repo_r4.language);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r3.watchers, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r4.watchers, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r3.forks, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r4.forks, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", repo_r3.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("href", repo_r4.html_url, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](26, 8, repo_r3.updated_at));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](26, 8, repo_r4.updated_at));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r3.description, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", repo_r4.description, " ");
+    }
+}
+function GConnectSearchRepoComponent_app_error_8_Template(rf, ctx) {
+    if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-error", 24);
+    }
+    if (rf & 2) {
+        const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("name", ctx_r3.searchName);
     }
 }
 let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
     class GConnectSearchRepoComponent {
         constructor(apiService) {
             this.apiService = apiService;
+            this.errors = false;
+            this.searchName = 'Repository Name';
         }
         ngOnInit() {
             // this.apiService.getRepos('Github-Connect')
@@ -75095,11 +75178,12 @@ let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
                 this.repos = this.apiService.repos['items'];
             }, (error) => {
                 console.log(error);
+                this.errors = true;
             });
         }
     }
     GConnectSearchRepoComponent.ɵfac = function GConnectSearchRepoComponent_Factory(t) { return new (t || GConnectSearchRepoComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_1__["GithubApiService"])); };
-    GConnectSearchRepoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectSearchRepoComponent, selectors: [["app-g-connect-search-repo"]], decls: 8, vars: 2, consts: [[1, "search-repo", "container"], ["name", "searchRepoForm", 1, "form-inline", "md-form", "mb-5", "mt-5", "form-sm", 3, "ngSubmit"], ["searchRepoForm", "ngForm"], ["name", "searchrepo", "type", "text", "placeholder", "Search GitHub Repository", "aria-label", "Search", 1, "form-control", "form-control-sm", 3, "ngModel", "ngModelChange"], ["searchrepo", "ngModel"], ["type", "submit", 1, "btn", "aqua-gradient", "btn-rounded", "btn-sm", "mr-auto", "waves-effect", "waves-light"], ["fas", "", "icon", "search", "aria-hidden", "true"], [4, "ngFor", "ngForOf"], [1, "mx-auto", "mb-3", "repo"], ["cascade", "true", "wider", "true"], [1, "view", "view-cascade", "gradient-card-header", "blue-gradient", 3, "appFocusRepo"], [1, "card-header-title"], ["color", "cyan"], [1, "text-center"], ["pill", "true", "color", "purple"], ["fas", "", "icon", "eye", 1, "mr-1"], ["fas", "", "icon", "code-branch", 1, "mr-1"], [3, "href"], ["fab", "", "icon", "github", 1, "mr-1"], ["fas", "", "icon", "angle-double-right"], [1, "mb-0", "mt-2"], [1, "far", "fa-calendar", "mr-2"], ["cascade", "true", 1, "text-center"]], template: function GConnectSearchRepoComponent_Template(rf, ctx) {
+    GConnectSearchRepoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectSearchRepoComponent, selectors: [["app-g-connect-search-repo"]], decls: 9, vars: 3, consts: [[1, "search-repo", "container"], ["name", "searchRepoForm", 1, "form-inline", "md-form", "mb-5", "mt-5", "form-sm", 3, "ngSubmit"], ["searchRepoForm", "ngForm"], ["name", "searchrepo", "type", "text", "placeholder", "Search GitHub Repository", "aria-label", "Search", 1, "form-control", "form-control-sm", 3, "ngModel", "ngModelChange"], ["searchrepo", "ngModel"], ["type", "submit", 1, "btn", "aqua-gradient", "btn-rounded", "btn-sm", "mr-auto", "waves-effect", "waves-light"], ["fas", "", "icon", "search", "aria-hidden", "true"], [4, "ngFor", "ngForOf"], [3, "name", 4, "ngIf"], [1, "mx-auto", "mb-3", "repo"], ["cascade", "true", "wider", "true"], [1, "view", "view-cascade", "gradient-card-header", "blue-gradient", 3, "appFocusRepo"], [1, "card-header-title"], ["color", "cyan"], [1, "text-center"], ["pill", "true", "color", "purple"], ["fas", "", "icon", "eye", 1, "mr-1"], ["fas", "", "icon", "code-branch", 1, "mr-1"], [3, "href"], ["fab", "", "icon", "github", 1, "mr-1"], ["fas", "", "icon", "angle-double-right"], [1, "mb-0", "mt-2"], [1, "far", "fa-calendar", "mr-2"], ["cascade", "true", 1, "text-center"], [3, "name"]], template: function GConnectSearchRepoComponent_Template(rf, ctx) {
             if (rf & 1) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1, 2);
@@ -75112,6 +75196,7 @@ let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, GConnectSearchRepoComponent_div_7_Template, 30, 10, "div", 7);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, GConnectSearchRepoComponent_app_error_8_Template, 1, 1, "app-error", 8);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
             }
             if (rf & 2) {
@@ -75119,8 +75204,10 @@ let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.reponame);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.repos);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.errors);
             }
-        }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["FasDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbCardComponent"], _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_5__["FocusRepoDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MDBBadgeComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["FabDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbCardBodyComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbCardTextComponent"]], pipes: [_pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_6__["TimeAgoPipe"]], styles: [".search-repo[_ngcontent-%COMP%]   .form-inline[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 50%;\n  margin: auto;\n  margin-right: 0px;\n}\n.search-repo[_ngcontent-%COMP%]   .btn-rounded[_ngcontent-%COMP%] {\n  border-radius: 10em;\n}\n.search-repo[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%] {\n  border-radius: 0.25rem;\n}\n.search-repo[_ngcontent-%COMP%]   .card-cascade.wider[_ngcontent-%COMP%] {\n  background-color: transparent;\n  box-shadow: none;\n}\n.search-repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 1;\n  margin-right: 4%;\n  margin-left: 4%;\n  background: #fff;\n  border-radius: 0 0 0.25rem 0.25rem;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n}\n.search-repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  z-index: 2;\n}\n.search-repo[_ngcontent-%COMP%]   .card.card-cascade[_ngcontent-%COMP%]   .view.view-cascade.gradient-card-header[_ngcontent-%COMP%] {\n  padding: 1.6rem 1rem;\n  color: #fff;\n  text-align: center;\n}"] });
+        }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["FasDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbCardComponent"], _directives_focus_repo_directive__WEBPACK_IMPORTED_MODULE_5__["FocusRepoDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MDBBadgeComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["FabDirective"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbCardBodyComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_3__["MdbCardTextComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_6__["ErrorComponent"]], pipes: [_pipes_time_ago_pipe__WEBPACK_IMPORTED_MODULE_7__["TimeAgoPipe"]], styles: [".search-repo[_ngcontent-%COMP%]   .form-inline[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 50%;\n  margin: auto;\n  margin-right: 0px;\n}\n.search-repo[_ngcontent-%COMP%]   .btn-rounded[_ngcontent-%COMP%] {\n  border-radius: 10em;\n}\n.search-repo[_ngcontent-%COMP%]   .card[_ngcontent-%COMP%] {\n  border-radius: 0.25rem;\n}\n.search-repo[_ngcontent-%COMP%]   .card-cascade.wider[_ngcontent-%COMP%] {\n  background-color: transparent;\n  box-shadow: none;\n}\n.search-repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .card-body.card-body-cascade[_ngcontent-%COMP%] {\n  z-index: 1;\n  margin-right: 4%;\n  margin-left: 4%;\n  background: #fff;\n  border-radius: 0 0 0.25rem 0.25rem;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n}\n.search-repo[_ngcontent-%COMP%]   .card.card-cascade.wider[_ngcontent-%COMP%]   .view.view-cascade[_ngcontent-%COMP%] {\n  z-index: 2;\n}\n.search-repo[_ngcontent-%COMP%]   .card.card-cascade[_ngcontent-%COMP%]   .view.view-cascade.gradient-card-header[_ngcontent-%COMP%] {\n  padding: 1.6rem 1rem;\n  color: #fff;\n  text-align: center;\n}"] });
     return GConnectSearchRepoComponent;
 })();
 
@@ -75144,6 +75231,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-bootstrap-md */ "./node_modules/angular-bootstrap-md/__ivy_ngcc__/fesm2015/angular-bootstrap-md.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /* harmony import */ var _g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../g-connect-user/g-connect-user.component */ "./src/app/components/g-connect-user/g-connect-user.component.ts");
+/* harmony import */ var _error_error_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../error/error.component */ "./src/app/components/error/error.component.ts");
+
 
 
 
@@ -75154,17 +75243,28 @@ __webpack_require__.r(__webpack_exports__);
 
 function GConnectSearchUserComponent_app_g_connect_user_7_Template(rf, ctx) {
     if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-g-connect-user", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-g-connect-user", 9);
     }
     if (rf & 2) {
         const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("user", ctx_r2.user)("repos", ctx_r2.userrepos)("followers", ctx_r2.userfollowers)("followings", ctx_r2.userfollowing);
     }
 }
+function GConnectSearchUserComponent_app_error_8_Template(rf, ctx) {
+    if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-error", 10);
+    }
+    if (rf & 2) {
+        const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("name", ctx_r3.searchName);
+    }
+}
 let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
     class GConnectSearchUserComponent {
         constructor(apiService) {
             this.apiService = apiService;
+            this.errors = false;
+            this.searchName = 'Username';
             this.user = new _classes_user_class_user__WEBPACK_IMPORTED_MODULE_1__["User"](0, "", "", "", "", "", "", "", "", 0, 0, 0, new Date());
         }
         ngOnInit() {
@@ -75186,6 +75286,7 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
                 this.user = this.apiService.user;
             }, (error) => {
                 console.log(error);
+                this.errors = true;
             });
             this.apiService.getUserRepos(this.username).then((success) => {
                 this.userrepos = this.apiService.userrepos;
@@ -75209,7 +75310,7 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
         }
     }
     GConnectSearchUserComponent.ɵfac = function GConnectSearchUserComponent_Factory(t) { return new (t || GConnectSearchUserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_2__["GithubApiService"])); };
-    GConnectSearchUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectSearchUserComponent, selectors: [["app-g-connect-search-user"]], decls: 8, vars: 2, consts: [[1, "search-user"], ["name", "searchUserForm", 1, "form-inline", "md-form", "mb-5", "mt-5", "form-sm", 3, "ngSubmit"], ["searchUserForm", "ngForm"], ["name", "searchuser", "type", "text", "placeholder", "Search GitHub User", "aria-label", "Search", 1, "form-control", "form-control-sm", 3, "ngModel", "ngModelChange"], ["searchuser", "ngModel"], ["type", "submit", 1, "btn", "aqua-gradient", "btn-rounded", "btn-sm", "mr-auto", "waves-effect", "waves-light"], ["fas", "", "icon", "search", "aria-hidden", "true"], [3, "user", "repos", "followers", "followings", 4, "ngIf"], [3, "user", "repos", "followers", "followings"]], template: function GConnectSearchUserComponent_Template(rf, ctx) {
+    GConnectSearchUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectSearchUserComponent, selectors: [["app-g-connect-search-user"]], decls: 9, vars: 3, consts: [[1, "search-user"], ["name", "searchUserForm", 1, "form-inline", "md-form", "mb-5", "mt-5", "form-sm", 3, "ngSubmit"], ["searchUserForm", "ngForm"], ["name", "searchuser", "type", "text", "placeholder", "Search GitHub User", "aria-label", "Search", 1, "form-control", "form-control-sm", 3, "ngModel", "ngModelChange"], ["searchuser", "ngModel"], ["type", "submit", 1, "btn", "aqua-gradient", "btn-rounded", "btn-sm", "mr-auto", "waves-effect", "waves-light"], ["fas", "", "icon", "search", "aria-hidden", "true"], [3, "user", "repos", "followers", "followings", 4, "ngIf"], [3, "name", 4, "ngIf"], [3, "user", "repos", "followers", "followings"], [3, "name"]], template: function GConnectSearchUserComponent_Template(rf, ctx) {
             if (rf & 1) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1, 2);
@@ -75222,6 +75323,7 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, GConnectSearchUserComponent_app_g_connect_user_7_Template, 1, 4, "app-g-connect-user", 7);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, GConnectSearchUserComponent_app_error_8_Template, 1, 1, "app-error", 8);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
             }
             if (rf & 2) {
@@ -75229,8 +75331,10 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.username);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.userrepos);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.errors);
             }
-        }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgModel"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["FasDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_6__["GConnectUserComponent"]], styles: [".search-user[_ngcontent-%COMP%] {\n  height: 100%;\n}\n.search-user[_ngcontent-%COMP%]   .form-inline[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 50%;\n  margin: auto;\n  margin-right: 0px;\n}\n.search-user[_ngcontent-%COMP%]   .btn-rounded[_ngcontent-%COMP%] {\n  border-radius: 10em;\n}"] });
+        }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgModel"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["MdbIconComponent"], angular_bootstrap_md__WEBPACK_IMPORTED_MODULE_4__["FasDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _g_connect_user_g_connect_user_component__WEBPACK_IMPORTED_MODULE_6__["GConnectUserComponent"], _error_error_component__WEBPACK_IMPORTED_MODULE_7__["ErrorComponent"]], styles: [".search-user[_ngcontent-%COMP%] {\n  height: 100%;\n}\n.search-user[_ngcontent-%COMP%]   .form-inline[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 50%;\n  margin: auto;\n  margin-right: 0px;\n}\n.search-user[_ngcontent-%COMP%]   .btn-rounded[_ngcontent-%COMP%] {\n  border-radius: 10em;\n}"] });
     return GConnectSearchUserComponent;
 })();
 
