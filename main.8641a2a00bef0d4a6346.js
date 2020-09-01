@@ -75177,6 +75177,9 @@ let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
             this.apiService.getRepos(this.reponame)
                 .then((success) => {
                 this.repos = this.apiService.repos['items'];
+                if (Object.keys(this.repos).length === 0) {
+                    this.errors = true;
+                }
             }, (error) => {
                 console.log(error);
                 this.errors = true;
