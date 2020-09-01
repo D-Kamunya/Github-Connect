@@ -31,6 +31,9 @@ export class GConnectSearchRepoComponent implements OnInit {
     this.apiService.getRepos(this.reponame)
     .then((success)=>{
       this.repos = this.apiService.repos['items'];
+      if(Object.keys(this.repos).length===0){
+        this.errors=true
+      }
     },
     (error)=>{
       console.log(error)
