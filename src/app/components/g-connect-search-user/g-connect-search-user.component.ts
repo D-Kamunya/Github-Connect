@@ -41,6 +41,7 @@ export class GConnectSearchUserComponent implements OnInit {
   }
 
   searchUser(){
+    this.errors=false
     this.userrepos=undefined
     this.apiService.getUserProfile(this.username).then((success)=>{
       this.user = this.apiService.user;
