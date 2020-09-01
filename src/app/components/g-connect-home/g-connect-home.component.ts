@@ -16,6 +16,7 @@ export class GConnectHomeComponent implements OnInit {
   userfollowers:Follower
   userfollowing:Following
   userName:string
+  
 
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
