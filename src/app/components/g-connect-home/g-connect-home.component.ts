@@ -15,28 +15,30 @@ export class GConnectHomeComponent implements OnInit {
   userrepos:Repo
   userfollowers:Follower
   userfollowing:Following
+  userName:string
 
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
     // this.userrepos=new Repo(0,"","","","","","","","",0,0,0,new Date())
+    this.userName='d-kamunya'
   }
 
   ngOnInit(): void {
-    this.apiService.getUserProfile('d-kamunya').then((success)=>{
+    this.apiService.getUserProfile(this.userName).then((success)=>{
         this.user = this.apiService.user;
       },
       (error)=>{
         console.log(error)
       })
 
-      this.apiService.getUserRepos('d-kamunya').then((success)=>{
+      this.apiService.getUserRepos(this.userName).then((success)=>{
         this.userrepos = this.apiService.userrepos;
       },
       (error)=>{
         console.log(error)
       })
 
-      this.apiService.getUserFollowers('d-kamunya')
+      this.apiService.getUserFollowers(this.userName)
       .then((success)=>{
         this.userfollowers = this.apiService.userfollowers;
         console.log(this.userfollowers);
@@ -46,7 +48,7 @@ export class GConnectHomeComponent implements OnInit {
         console.log(error)
       })
 
-      this.apiService.getUserFollowing('d-kamunya')
+      this.apiService.getUserFollowing(this.userName)
       .then((success)=>{
         this.userfollowing = this.apiService.userfollowing;
         console.log(this.userfollowing);
