@@ -3,8 +3,8 @@
     <input name="searchrepo" #searchrepo="ngModel" [(ngModel)]='reponame' class="form-control form-control-sm" type="text" placeholder="Search GitHub Repository" aria-label="Search">
     <button class="btn aqua-gradient btn-rounded btn-sm mr-auto waves-effect waves-light" type="submit"> <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon></button>
   </form>
-    <div *ngFor="let repo of repos;let i=index">
-      <div class="mx-auto mb-3 repo">
+  <div class="row">
+    <div class="mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6" *ngFor="let repo of repos;let i=index">
         <!--Card-->
         <mdb-card cascade="true" wider="true">
   
@@ -39,8 +39,10 @@
   
         </mdb-card>
         <!--/.Card-->
-      </div>
+      
     </div>
+  </div>
+   
     <app-error *ngIf='errors' [name]='searchName'></app-error>
    
 </div>

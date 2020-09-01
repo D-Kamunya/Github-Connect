@@ -44,70 +44,75 @@
         <div class="tab-content">
           <!-- REPOS TAB -->
           <div class="tab-pane fade in show active mt-3"  id="repos" role="tabpanel">
-            <div *ngFor="let repo of repos,let i=index">
-              <div class="container mt-2">
-                <mdb-card cascade="true" narrower="true" >
-  
-                  <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
-                    <h2 class="card-header-title">{{repo.name}}</h2>
-                    <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
-                    <div class="text-center">
-                      <mdb-badge pill="true" color="purple">
-                        <mdb-icon fas icon="eye" class="mr-1"></mdb-icon>{{repo.watchers}}
-                      </mdb-badge>
-                      <mdb-badge pill="true" color="purple">
-                        <mdb-icon fas icon="code-branch" class="mr-1"></mdb-icon>{{repo.forks}}
-                      </mdb-badge>
-                      <a href="{{repo.html_url}}">
+            <div class="row">
+              <div class="mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6" *ngFor="let repo of repos,let i=index">
+                <div class="container mt-2">
+                  <mdb-card cascade="true" narrower="true" >
+    
+                    <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
+                      <h2 class="card-header-title">{{repo.name}}</h2>
+                      <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
+                      <div class="text-center">
                         <mdb-badge pill="true" color="purple">
-                          <mdb-icon fab icon="github" class="mr-1"></mdb-icon><mdb-icon fas icon="angle-double-right"></mdb-icon>
+                          <mdb-icon fas icon="eye" class="mr-1"></mdb-icon>{{repo.watchers}}
                         </mdb-badge>
-                      </a>
-                   
+                        <mdb-badge pill="true" color="purple">
+                          <mdb-icon fas icon="code-branch" class="mr-1"></mdb-icon>{{repo.forks}}
+                        </mdb-badge>
+                        <a href="{{repo.html_url}}">
+                          <mdb-badge pill="true" color="purple">
+                            <mdb-icon fab icon="github" class="mr-1"></mdb-icon><mdb-icon fas icon="angle-double-right"></mdb-icon>
+                          </mdb-badge>
+                        </a>
+                     
+                      </div>
+                      <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
                     </div>
-                    <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
-                  </div>
-            
-                  <mdb-card-body cascade="true" class="text-center">
-                    <!--Card content-->
-            
-                    <mdb-card-text>{{repo.description}}</mdb-card-text>
-            
-                  </mdb-card-body>
-                  <!--/.Card content-->
-            
-                </mdb-card>
+              
+                    <mdb-card-body cascade="true" class="text-center">
+                      <!--Card content-->
+              
+                      <mdb-card-text>{{repo.description}}</mdb-card-text>
+              
+                    </mdb-card-body>
+                    <!--/.Card content-->
+              
+                  </mdb-card>
+                </div>
               </div>
             </div>
+            
            
           </div>
           <!-- FOLLOWERS TAB -->
           <div class="tab-pane fade text-center row mt-3"   id="followers" role="tabpanel">
-            <div *ngFor='let follower of followers'>
-              <div class="chip teal lighten-2 white-text col-6 ">
-                <img src="{{follower.avatar_url}}" alt="Contact Person">
-                <p class="mt-2">{{follower.login}}
-                <a href="{{follower.html_url}}" class="btn-floating btn-small mr-3 btn-fb waves-effect waves-light">
-                  <mdb-icon fab icon="github"></mdb-icon>
-                </a>
-              </p> 
+            <div class="row">
+              <div class="mx-auto mb-3 repo col-lg-6 col-md-6 col-sm-6" *ngFor='let follower of followers'>
+                <div class="chip teal lighten-2 white-text col-6 ">
+                  <img src="{{follower.avatar_url}}" alt="Contact Person">
+                  <p class="mt-2">{{follower.login}}
+                  <a href="{{follower.html_url}}" class="btn-floating btn-small mr-3 btn-fb waves-effect waves-light">
+                    <mdb-icon fab icon="github"></mdb-icon>
+                  </a>
+                </p> 
+                </div>
               </div>
             </div>
-        
           </div>
           <!-- FOLLOWERING TAB -->
           <div class="tab-pane fade text-center row mt-3" id="following" role="tabpanel">
-            <div *ngFor='let following of followings'>
-              <div class="chip teal lighten-2 white-text col-6 ">
-                <img src="{{following.avatar_url}}" alt="Contact Person">
-                <p class="mt-2">{{following.login}}
-                <a href="{{following.html_url}}" class="btn-floating btn-small mr-3 btn-fb waves-effect waves-light">
-                  <mdb-icon fab icon="github"></mdb-icon>
-                </a>
-              </p> 
+            <div class="row">
+              <div class="mx-auto mb-3 repo col-lg-6 col-md-6 col-sm-6" *ngFor='let following of followings'>
+                <div class="chip teal lighten-2 white-text col-6 ">
+                  <img src="{{following.avatar_url}}" alt="Contact Person">
+                  <p class="mt-2">{{following.login}}
+                  <a href="{{following.html_url}}" class="btn-floating btn-small mr-3 btn-fb waves-effect waves-light">
+                    <mdb-icon fab icon="github"></mdb-icon>
+                  </a>
+                </p> 
+                </div>
               </div>
             </div>
-         
           </div>
         </div>
       </div>
