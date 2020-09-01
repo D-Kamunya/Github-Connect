@@ -14,10 +14,15 @@ export class GConnectUserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if(Object.keys(this.repos).length>3){
+      this.showBtn=true
+    }
   }
 
   @Input () user:User
   @Input () repos:Repo
   @Input () followers:Follower
   @Input () followings:Following
+
+  showBtn:boolean=false
 }
