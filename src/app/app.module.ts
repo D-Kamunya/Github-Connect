@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { FocusRepoDirective } from './directives/focus-repo.directive';
 import { ErrorComponent } from './components/error/error.component';
+import { GConnectUserreposComponent } from './components/g-connect-userrepos/g-connect-userrepos.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ErrorComponent } from './components/error/error.component';
     GConnectUserComponent,
     TimeAgoPipe,
     FocusRepoDirective,
-    ErrorComponent
+    ErrorComponent,
+    GConnectUserreposComponent
   ],
   imports: [
     BrowserModule,
