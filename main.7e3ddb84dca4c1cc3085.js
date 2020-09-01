@@ -75180,14 +75180,16 @@ let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
                 console.log(error);
                 this.errors = true;
             });
+            this.reponame = "";
         }
     }
     GConnectSearchRepoComponent.ɵfac = function GConnectSearchRepoComponent_Factory(t) { return new (t || GConnectSearchRepoComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_1__["GithubApiService"])); };
     GConnectSearchRepoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectSearchRepoComponent, selectors: [["app-g-connect-search-repo"]], decls: 9, vars: 3, consts: [[1, "search-repo", "container"], ["name", "searchRepoForm", 1, "form-inline", "md-form", "mb-5", "mt-5", "form-sm", 3, "ngSubmit"], ["searchRepoForm", "ngForm"], ["name", "searchrepo", "type", "text", "placeholder", "Search GitHub Repository", "aria-label", "Search", 1, "form-control", "form-control-sm", 3, "ngModel", "ngModelChange"], ["searchrepo", "ngModel"], ["type", "submit", 1, "btn", "aqua-gradient", "btn-rounded", "btn-sm", "mr-auto", "waves-effect", "waves-light"], ["fas", "", "icon", "search", "aria-hidden", "true"], [4, "ngFor", "ngForOf"], [3, "name", 4, "ngIf"], [1, "mx-auto", "mb-3", "repo"], ["cascade", "true", "wider", "true"], [1, "view", "view-cascade", "gradient-card-header", "blue-gradient", 3, "appFocusRepo"], [1, "card-header-title"], ["color", "cyan"], [1, "text-center"], ["pill", "true", "color", "purple"], ["fas", "", "icon", "eye", 1, "mr-1"], ["fas", "", "icon", "code-branch", 1, "mr-1"], [3, "href"], ["fab", "", "icon", "github", 1, "mr-1"], ["fas", "", "icon", "angle-double-right"], [1, "mb-0", "mt-2"], [1, "far", "fa-calendar", "mr-2"], ["cascade", "true", 1, "text-center"], [3, "name"]], template: function GConnectSearchRepoComponent_Template(rf, ctx) {
             if (rf & 1) {
+                const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1, 2);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function GConnectSearchRepoComponent_Template_form_ngSubmit_1_listener() { return ctx.searchRepo(); });
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function GConnectSearchRepoComponent_Template_form_ngSubmit_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2); ctx.searchRepo(); return _r0.reset(); });
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "input", 3, 4);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GConnectSearchRepoComponent_Template_input_ngModelChange_3_listener($event) { return ctx.reponame = $event; });
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -75307,14 +75309,16 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
             }, (error) => {
                 console.log(error);
             });
+            this.username = "";
         }
     }
     GConnectSearchUserComponent.ɵfac = function GConnectSearchUserComponent_Factory(t) { return new (t || GConnectSearchUserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_github_api_github_api_service__WEBPACK_IMPORTED_MODULE_2__["GithubApiService"])); };
     GConnectSearchUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: GConnectSearchUserComponent, selectors: [["app-g-connect-search-user"]], decls: 9, vars: 3, consts: [[1, "search-user"], ["name", "searchUserForm", 1, "form-inline", "md-form", "mb-5", "mt-5", "form-sm", 3, "ngSubmit"], ["searchUserForm", "ngForm"], ["name", "searchuser", "type", "text", "placeholder", "Search GitHub User", "aria-label", "Search", 1, "form-control", "form-control-sm", 3, "ngModel", "ngModelChange"], ["searchuser", "ngModel"], ["type", "submit", 1, "btn", "aqua-gradient", "btn-rounded", "btn-sm", "mr-auto", "waves-effect", "waves-light"], ["fas", "", "icon", "search", "aria-hidden", "true"], [3, "user", "repos", "followers", "followings", 4, "ngIf"], [3, "name", 4, "ngIf"], [3, "user", "repos", "followers", "followings"], [3, "name"]], template: function GConnectSearchUserComponent_Template(rf, ctx) {
             if (rf & 1) {
+                const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1, 2);
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function GConnectSearchUserComponent_Template_form_ngSubmit_1_listener() { return ctx.searchUser(); });
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function GConnectSearchUserComponent_Template_form_ngSubmit_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2); ctx.searchUser(); return _r0.reset(); });
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "input", 3, 4);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function GConnectSearchUserComponent_Template_input_ngModelChange_3_listener($event) { return ctx.username = $event; });
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
