@@ -30,8 +30,10 @@ Here are the features in summary:
 |Show github profile|Enter the Username in the search box and cick `search`|Displays name, username, bio,location,blog link, number of repositories,date of creating the repo, followers and following users|
 |Search gitub repositories | Navigate to Search enter repo name and click search.|Displays a list of all repositories based on the query|
 |Redirect to github profile on Github website | Click the `github icon` button of a Github user | Opens the profile on the Github website|
+|Showing Error message | Enter invalid repository or github username | Shows error message|
 |Redirect to a specific Github Repository | Click the `github icon` button of a repository on repositories page | Opens the Repository on Github website |
                    |
+                   
 
 ## Setup/Installation Requirements
 * **Installation**
