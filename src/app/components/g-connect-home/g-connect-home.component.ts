@@ -22,7 +22,7 @@ export class GConnectHomeComponent implements OnInit {
   constructor(private apiService:GithubApiService) { 
     this.user=new User(0,"","","","","","","","",0,0,0,new Date())
     // this.userrepos=new Repo(0,"","","","","","","","",0,0,0,new Date())
-    this.userName='d-kamunay'
+    this.userName='d-kamunya'
   }
 
   ngOnInit(): void {
