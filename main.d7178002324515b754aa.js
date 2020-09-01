@@ -75174,6 +75174,7 @@ let GConnectSearchRepoComponent = /*@__PURE__*/ (() => {
         }
         searchRepo() {
             this.repos = undefined;
+            this.errors = false;
             this.apiService.getRepos(this.reponame)
                 .then((success) => {
                 this.repos = this.apiService.repos['items'];
@@ -75288,6 +75289,7 @@ let GConnectSearchUserComponent = /*@__PURE__*/ (() => {
             // })
         }
         searchUser() {
+            this.errors = false;
             this.userrepos = undefined;
             this.apiService.getUserProfile(this.username).then((success) => {
                 this.user = this.apiService.user;
