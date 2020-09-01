@@ -1,39 +1,41 @@
-<div class="row">
-  <div class="mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6" *ngFor="let repo of userrepos;let i=index">
-      <!--Card-->
-      <mdb-card cascade="true" wider="true">
-
-        <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
-          <h2 class="card-header-title">{{repo.name}}</h2>
-          <p><mdb-badge color="cyan">{{repo.owner.login}}</mdb-badge></p>
-          <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
-          <div class="text-center">
-            <!--Facebook-->
-            <mdb-badge pill="true" color="purple">
-              <mdb-icon fas icon="eye" class="mr-1"></mdb-icon>{{repo.watchers}}
-            </mdb-badge>
-            <mdb-badge pill="true" color="purple">
-              <mdb-icon fas icon="code-branch" class="mr-1"></mdb-icon>{{repo.forks}}
-            </mdb-badge>
-            <a href="{{repo.html_url}}">
+<div class="container">
+  <div class="row">
+    <div class="mx-auto mb-3 repo col-lg-3 col-md-4 col-sm-6" *ngFor="let repo of userrepos;let i=index">
+        <!--Card-->
+        <mdb-card cascade="true" wider="true">
+  
+          <div [appFocusRepo] class="view view-cascade  gradient-card-header blue-gradient">
+            <h2 class="card-header-title">{{repo.name}}</h2>
+            <p><mdb-badge color="cyan">{{repo.owner.login}}</mdb-badge></p>
+            <p><mdb-badge color="cyan">{{repo.language}}</mdb-badge></p>
+            <div class="text-center">
+              <!--Facebook-->
               <mdb-badge pill="true" color="purple">
-                <mdb-icon fab icon="github" class="mr-1"></mdb-icon><mdb-icon fas icon="angle-double-right"></mdb-icon>
+                <mdb-icon fas icon="eye" class="mr-1"></mdb-icon>{{repo.watchers}}
               </mdb-badge>
-            </a>
-         
+              <mdb-badge pill="true" color="purple">
+                <mdb-icon fas icon="code-branch" class="mr-1"></mdb-icon>{{repo.forks}}
+              </mdb-badge>
+              <a href="{{repo.html_url}}">
+                <mdb-badge pill="true" color="purple">
+                  <mdb-icon fab icon="github" class="mr-1"></mdb-icon><mdb-icon fas icon="angle-double-right"></mdb-icon>
+                </mdb-badge>
+              </a>
+           
+            </div>
+            <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
           </div>
-          <p class="mb-0 mt-2"><i class="far fa-calendar mr-2"></i>{{repo.updated_at | timeAgo}}</p>
-        </div>
-
-        <mdb-card-body *ngIf='repo.description' cascade="true" class="text-center">
-
-          <mdb-card-text>{{repo.description}} </mdb-card-text>
-
-        </mdb-card-body>
-        <!--/.Card content-->
-
-      </mdb-card>
-      <!--/.Card-->
-    
+  
+          <mdb-card-body *ngIf='repo.description' cascade="true" class="text-center">
+  
+            <mdb-card-text>{{repo.description}} </mdb-card-text>
+  
+          </mdb-card-body>
+          <!--/.Card content-->
+  
+        </mdb-card>
+        <!--/.Card-->
+      
+    </div>
   </div>
 </div>
