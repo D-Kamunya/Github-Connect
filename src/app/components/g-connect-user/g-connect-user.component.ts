@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {User} from '../../classes/user-class/user'
 import {Repo} from '../../classes/repo-class/repo'
 import { Follower } from 'src/app/classes/follower-class/follower';
@@ -11,7 +12,7 @@ import { Following } from '../../classes/following-class/following';
 })
 export class GConnectUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     if(Object.keys(this.repos).length>3){
@@ -25,4 +26,8 @@ export class GConnectUserComponent implements OnInit {
   @Input () followings:Following
 
   showBtn:boolean=false
+  
+  goToUrl(username){
+    this.router.navigate(['/userrepos',username])
+  }
 }

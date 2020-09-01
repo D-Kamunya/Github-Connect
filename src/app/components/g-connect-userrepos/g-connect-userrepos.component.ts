@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-g-connect-userrepos',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GConnectUserreposComponent implements OnInit {
 
-  constructor() { }
+  username:string
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.username = this.route.snapshot.paramMap.get('username');
   }
 
 }
