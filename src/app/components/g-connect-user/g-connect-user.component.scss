@@ -22,11 +22,10 @@
   }
   .chip{
     display: inline-block;
-    height: 50px;
-    width: 45%;
+    min-height: 50px;
+    width: 100%;
     padding: 0 12px;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3px;
     font-size: 20px;
     font-weight: 500;
     line-height: 32px;
